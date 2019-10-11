@@ -3583,10 +3583,6 @@ acdb_init_fail:
         strdup("USB_AUDIO_TX SampleRate");
     my_data->current_backend_cfg[USB_AUDIO_TX_BACKEND].channels_mixer_ctl =
         strdup("USB_AUDIO_TX Channels");
-    my_data->current_backend_cfg[SLIMBUS_0_TX].bitwidth_mixer_ctl =
-        strdup("SLIM_0_TX Format");
-    my_data->current_backend_cfg[SLIMBUS_0_TX].samplerate_mixer_ctl =
-        strdup("SLIM_0_TX SampleRate");
 
     if (!strncmp(platform_get_snd_device_backend_interface(SND_DEVICE_IN_HDMI_MIC),
         "SEC_MI2S_TX", sizeof("SEC_MI2S_TX"))) {
@@ -8033,9 +8029,6 @@ bool platform_sound_trigger_usecase_needs_event(audio_usecase_t uc_id)
     case USECASE_INCALL_MUSIC_UPLINK:
     case USECASE_INCALL_MUSIC_UPLINK2:
     case USECASE_AUDIO_RECORD_VOIP:
-    case USECASE_AUDIO_RECORD_FM_VIRTUAL:
-    case USECASE_AUDIO_SPKR_CALIB_RX:
-    case USECASE_AUDIO_SPKR_CALIB_TX:
         needs_event = true;
         break;
     default:
