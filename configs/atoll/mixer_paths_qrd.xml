@@ -2679,10 +2679,6 @@
       <ctl name="MultiMedia16 Mixer TX_CDC_DMA_TX_3" value="1" />
     </path>
 
-    <path name="mmap-record">
-      <ctl name="MultiMedia16 Mixer TX_CDC_DMA_TX_3" value="1" />
-    </path>
-
     <path name="mmap-record bt-sco">
       <ctl name="MultiMedia16 Mixer SLIM_7_TX" value="1" />
     </path>
