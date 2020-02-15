@@ -511,6 +511,9 @@ static void  update_hardware_info_msmnile(struct hardware_info *hw_info, const c
         hw_info->snd_devices = (snd_device_t *)auto_variant_devices;
         hw_info->num_snd_devices = ARRAY_SIZE(auto_variant_devices);
         strlcpy(hw_info->dev_extn, "-custom", sizeof(hw_info->dev_extn));
+    } else if (strstr(snd_card_name, "hana55")) {
+        strlcpy(hw_info->name, "msmnile", sizeof(hw_info->name));
+        hw_info->is_stereo_spkr = false;
     } else {
         ALOGW("%s: Not a msmnile device", __func__);
     }
@@ -919,6 +922,7 @@ void *hw_info_init(const char *snd_card_name)
         ALOGV("SDX - variant soundcard");
         update_hardware_info_sdx(hw_info, snd_card_name);
     } else if (strstr(snd_card_name, "pahu") || strstr(snd_card_name, "tavil") ||
+            strstr(snd_card_name, "hana55") ||
             strstr(snd_card_name, "sa8155")) {
         ALOGV("MSMNILE - variant soundcard");
         update_hardware_info_msmnile(hw_info, snd_card_name);
