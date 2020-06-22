@@ -59,6 +59,7 @@ typedef int error_log_t;
 #include <audio_utils/Statistics.h>
 #include <audio_utils/clock.h>
 #endif
+#include <pthread.h>
 #include "audio_defs.h"
 #include "voice.h"
 #include "audio_hw_extn_api.h"
