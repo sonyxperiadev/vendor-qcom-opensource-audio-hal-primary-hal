@@ -78,21 +78,11 @@ LOCAL_MODULE:= libqcompostprocbundle
 LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_OWNER := qti
 
-LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
-
 LOCAL_C_INCLUDES := \
         external/tinyalsa/include \
-        $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \
-        $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/audio \
-        $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/techpack/audio/include \
-        $(call include-path-for, audio-effects)
-ifneq ($(BOARD_OPENSOURCE_DIR), )
-   LOCAL_C_INCLUDES += $(BOARD_OPENSOURCE_DIR)/audio-hal/primary-hal/hal \
-                       $(BOARD_OPENSOURCE_DIR)/audio-hal/primary-hal/hal/audio_extn/
-else
-   LOCAL_C_INCLUDES += vendor/qcom/opensource/audio-hal/primary-hal/hal \
-                       vendor/qcom/opensource/audio-hal/primary-hal/hal/audio_extn/
-endif # BOARD_OPENSOURCE_DIR
+        vendor/qcom/opensource/audio-hal/primary-hal/hal \
+        $(call include-path-for, audio-effects) \
+        vendor/qcom/opensource/audio-hal/primary-hal/hal/audio_extn/
 
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_DLKM)),true)
   LOCAL_HEADER_LIBRARIES += audio_kernel_headers
@@ -104,6 +94,8 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_DLKM)),true)
 endif
 
 ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
+        LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+        LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/audio
         LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/techpack/audio/include
         LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 endif
@@ -201,12 +193,8 @@ LOCAL_MODULE:= libvolumelistener
 LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_OWNER := qti
 
-LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
-
 LOCAL_C_INCLUDES := \
-        $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \
-        $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/audio \
-        $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/techpack/audio/include \
+        vendor/qcom/opensource/audio-hal/primary-hal/hal \
         external/tinyalsa/include \
         $(call include-path-for, audio-effects) \
         $(call include-path-for, audio-route) \
@@ -230,6 +218,8 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_DLKM)),true)
 endif
 
 ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
+        LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+        LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/audio
         LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/techpack/audio/include
         LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 endif
