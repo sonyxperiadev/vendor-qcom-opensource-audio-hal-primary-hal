@@ -1462,6 +1462,14 @@ int platform_info_init(const char *filename, void *platform, caller_t caller_typ
     section = ROOT;
 
     if (!file) {
+        ALOGD("%s: Failed to open %s, trying to fall back to %s",
+              __func__, platform_info_file_name, PLATFORM_INFO_XML_PATH);
+        strlcpy(platform_info_file_name, PLATFORM_INFO_XML_PATH,
+                MIXER_PATH_MAX_LENGTH);
+        file = fopen(platform_info_file_name, "r");
+    }
+
+    if (!file) {
         ALOGD("%s: Failed to open %s, using defaults.",
             __func__, platform_info_file_name);
         ret = -ENODEV;
