@@ -122,10 +122,6 @@ ifneq ($(filter msm8953,$(TARGET_BOARD_PLATFORM)),)
 endif
 endif
 
-ifeq ($(TARGET_BOARD_AUTO),true)
-  LOCAL_CFLAGS += -DPLATFORM_AUTO
-endif
-
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_DAEMON_SUPPORT)), true)
   LOCAL_CFLAGS += -DDAEMON_SUPPORT_AUTO
 endif
