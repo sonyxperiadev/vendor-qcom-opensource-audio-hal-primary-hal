@@ -117,10 +117,6 @@ ifneq ($(filter msm8953,$(TARGET_BOARD_PLATFORM)),)
 endif
 endif
 
-ifeq ($(TARGET_BOARD_AUTO),true)
-  LOCAL_CFLAGS += -DPLATFORM_AUTO
-endif
-
 LOCAL_CFLAGS += -Wno-macro-redefined
 
 LOCAL_HEADER_LIBRARIES := libhardware_headers
