@@ -3331,7 +3331,6 @@ int select_devices(struct audio_device *adev, audio_usecase_t uc_id)
         }
     }
 
-
     audio_extn_qdsp_set_device(usecase);
 
     /* If input stream is already running then effect needs to be
