@@ -53,7 +53,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -69,7 +69,7 @@ LOCAL_VENDOR_MODULE := true
 
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike sm8150 kona lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike sm8150 $(KONA) lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -118,7 +118,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -134,7 +134,7 @@ LOCAL_VENDOR_MODULE := true
 
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 kona lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 $(KONA) lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -186,7 +186,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -203,7 +203,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := vendor/qcom/opensource/audio-hal/primary-hal/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 kona lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 $(KONA) lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
 endif
@@ -251,7 +251,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -261,7 +261,7 @@ include $(BUILD_SHARED_LIBRARY)
 #--------------------------------------------
 include $(CLEAR_VARS)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 kona lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 $(KONA) lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
 endif
@@ -312,7 +312,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -322,7 +322,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 kona lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 $(KONA) lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
 endif
@@ -382,7 +382,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -398,7 +398,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := vendor/qcom/opensource/audio-hal/primary-hal/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 kona lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 $(KONA) lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -447,7 +447,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -465,7 +465,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := vendor/qcom/opensource/audio-hal/primary-hal/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 kona lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 $(KONA) lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -514,7 +514,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -530,7 +530,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := vendor/qcom/opensource/audio-hal/primary-hal/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 kona lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 $(KONA) lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -580,7 +580,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -596,7 +596,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := vendor/qcom/opensource/audio-hal/primary-hal/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 kona lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 $(KONA) lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -657,7 +657,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -673,7 +673,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := vendor/qcom/opensource/audio-hal/primary-hal/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 kona lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 $(KONA) lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -732,7 +732,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -748,7 +748,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := vendor/qcom/opensource/audio-hal/primary-hal/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 kona lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 $(KONA) lahaina holi lito bengal atoll sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -797,7 +797,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 #include $(BUILD_SHARED_LIBRARY)
@@ -813,7 +813,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := vendor/qcom/opensource/audio-hal/primary-hal/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 kona lahaina holi sdm660 msm8937 msm8953 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 $(KONA) lahaina holi sdm660 msm8937 msm8953 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM = msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -862,7 +862,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -877,7 +877,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := vendor/qcom/opensource/audio-hal/primary-hal/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 kona lahaina holi sdm660 msm8937 msm8953 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 $(KONA) lahaina holi sdm660 msm8937 msm8953 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM = msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -926,7 +926,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -944,7 +944,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := vendor/qcom/opensource/audio-hal/primary-hal/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 kona lahaina holi lito atoll bengal sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 sdmshrike sm8150 $(KONA) lahaina holi lito atoll bengal sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -989,7 +989,7 @@ endif
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
