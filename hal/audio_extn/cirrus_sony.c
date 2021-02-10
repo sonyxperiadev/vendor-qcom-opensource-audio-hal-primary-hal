@@ -117,7 +117,11 @@ int (*miscta_write_unit)(uint32_t id, const void *buf, uint32_t size) = NULL;
 #define TA_CIRRUS_CAL_SPKR_DIAG_F0_STATUS	4714
 
 /* Playback */
-#define CIRRUS_PLAYBACK_MIXER	"PRI_MI2S_RX Audio Mixer MultiMedia1"
+#ifdef USE_SENARY_MI2S
+ #define CIRRUS_PLAYBACK_MIXER	"SEN_MI2S_RX Audio Mixer MultiMedia1"
+#else
+ #define CIRRUS_PLAYBACK_MIXER	"PRI_MI2S_RX Audio Mixer MultiMedia1"
+#endif
 
 /* Mixer controls */
 #define CIRRUS_CTL_FORCE_WAKE		"Hibernate Force Wake"
