@@ -1596,8 +1596,6 @@ int spkr_prot_start_processing(__unused snd_device_t snd_device) {
 
     pthread_mutex_lock(&handle.fb_prot_mutex);
 
-    ret = cirrus_set_force_wake(true);
-
     ALOGV("%s: current state %d", __func__, handle.state);
 
     /*
@@ -1615,6 +1613,8 @@ int spkr_prot_start_processing(__unused snd_device_t snd_device) {
         ret = -1;
         goto end;
     }
+
+    ret = cirrus_set_force_wake(true);
 
     audio_route_apply_and_update_path(adev->audio_route,
                                       fp_platform_get_snd_device_name(snd_device));
