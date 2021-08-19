@@ -154,7 +154,7 @@ endif
 
 ################################################################################
 
-ifneq ($(filter msm8992 msm8994 msm8996 msm8998 sdm660 sdm845 apq8098_latv sdm710 msm8953 msm8937 qcs605 sdmshrike sm8150 $(KONA) lahaina holi atoll $(MSMSTEPPE) $(TRINKET) lito,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter msm8992 msm8994 msm8996 msm8998 sdm660 sdm845 apq8098_latv sdm710 msm8953 msm8937 qcs605 sdmshrike sm8150 $(KONA) lahaina holi atoll $(MSMSTEPPE) $(TRINKET) $(LITO),$(TARGET_BOARD_PLATFORM)),)
 
 include $(CLEAR_VARS)
 
