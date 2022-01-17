@@ -96,7 +96,7 @@ ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
         LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 endif
 
-ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) $(LAHAINA) holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -140,7 +140,7 @@ endif
 LOCAL_MODULE:= libhwacceffectswrapper
 LOCAL_VENDOR_MODULE := true
 
-ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) $(LAHAINA) holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := unsigned-integer-overflow signed-integer-overflow
 endif
 include $(BUILD_STATIC_LIBRARY)
@@ -150,7 +150,7 @@ endif
 
 ################################################################################
 
-ifneq ($(filter msm8992 msm8994 msm8996 msm8998 sdm660 sdm845 apq8098_latv sdm710 msm8953 msm8937 qcs605 sdmshrike sm8150 $(KONA) lahaina holi atoll $(MSMSTEPPE) $(TRINKET) $(LITO),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter msm8992 msm8994 msm8996 msm8998 sdm660 sdm845 apq8098_latv sdm710 msm8953 msm8937 qcs605 sdmshrike sm8150 $(KONA) $(LAHAINA) holi atoll $(MSMSTEPPE) $(TRINKET) $(LITO),$(TARGET_BOARD_PLATFORM)),)
 
 include $(CLEAR_VARS)
 
@@ -210,7 +210,7 @@ ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
         LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 endif
 
-ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) $(LAHAINA) holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
@@ -246,7 +246,7 @@ LOCAL_C_INCLUDES := \
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
-ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) $(LAHAINA) holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
