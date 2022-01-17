@@ -55,7 +55,7 @@ LOCAL_CFLAGS += -fstack-protector-strong
 endif
 
 
-ifneq ($(filter $(KONA) lahaina holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) $(LAHAINA) holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
