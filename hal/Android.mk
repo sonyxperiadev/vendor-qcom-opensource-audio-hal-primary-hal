@@ -8,7 +8,7 @@ LOCAL_ARM_MODE := arm
 
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter msm8974 msm8226 msm8084 msm8610 apq8084 msm8994 msm8992 msm8996 msm8998 apq8098_latv sdm845 sdm710 qcs605 sdmshrike sm8150 $(KONA) $(LAHAINA) holi sdm660 msm8937 msm8953 $(MSMSTEPPE) $(TRINKET) $(LITO) atoll bengal,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter msm8974 msm8226 msm8084 msm8610 apq8084 msm8994 msm8992 msm8996 msm8998 apq8098_latv sdm845 sdm710 qcs605 sdmshrike sm8150 $(KONA) $(LAHAINA) $(HOLI) sdm660 msm8937 msm8953 $(MSMSTEPPE) $(TRINKET) $(LITO) atoll bengal,$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM = msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -93,7 +93,7 @@ ifneq ($(filter $(LITO),$(TARGET_BOARD_PLATFORM)),)
   LOCAL_CFLAGS += -DMAX_TARGET_SPECIFIC_CHANNEL_CNT="4"
   LOCAL_CFLAGS += -DINCALL_STEREO_CAPTURE_ENABLED
 endif
-ifneq ($(filter holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(HOLI),$(TARGET_BOARD_PLATFORM)),)
   LOCAL_CFLAGS := -DPLATFORM_HOLI
   LOCAL_CFLAGS += -DMAX_TARGET_SPECIFIC_CHANNEL_CNT="4"
   LOCAL_CFLAGS += -DINCALL_STEREO_CAPTURE_ENABLED
@@ -404,7 +404,7 @@ LOCAL_MODULE_OWNER := qti
 
 LOCAL_VENDOR_MODULE := true
 
-ifneq ($(filter $(KONA) $(LAHAINA) holi,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) $(LAHAINA) $(HOLI),$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
