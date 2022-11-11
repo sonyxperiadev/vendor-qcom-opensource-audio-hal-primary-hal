@@ -27,16 +27,15 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef VERIFY_PRINT_ERROR
-#define VERIFY_PRINT_ERROR
-#endif
+#define LOG_TAG "audioadsprpcd"
+#define ATRACE_TAG (ATRACE_TAG_HAL)
+/* #define LOG_NDEBUG 0 */
+#define LOG_NDDEBUG 0
 
 #include <stdio.h>
 #include <dlfcn.h>
 #include <unistd.h>
-#include "verify.h"
-#include "AEEStdErr.h"
-
+#include <log/log.h>
 
 #ifndef ADSP_DEFAULT_LISTENER_NAME
 #define ADSP_DEFAULT_LISTENER_NAME "libadsp_default_listener.so"
@@ -50,27 +49,27 @@ int main(int argc, char *argv[]) {
   void *adsphandler = NULL;
   adsp_default_listener_start_t listener_start;
 
-  VERIFY_EPRINTF("audio adsp daemon starting");
+  ALOGI("audio adsp daemon starting");
   while (1) {
     if(NULL != (adsphandler = dlopen(ADSP_DEFAULT_LISTENER_NAME, RTLD_NOW))) {
       if(NULL != (listener_start =
         (adsp_default_listener_start_t)dlsym(adsphandler, "adsp_default_listener_start"))) {
-        VERIFY_IPRINTF("adsp_default_listener_start called");
+        ALOGI("adsp_default_listener_start called");
         nErr = listener_start(argc, argv);
       }
       if(0 != dlclose(adsphandler)) {
-        VERIFY_EPRINTF("dlclose failed");
+        ALOGE("dlclose failed");
       }
     } else {
-      VERIFY_EPRINTF("audio adsp daemon error %s", dlerror());
+      ALOGE("audio adsp daemon error %s", dlerror());
     }
-    if (nErr == AEE_ECONNREFUSED) {
-      VERIFY_EPRINTF("fastRPC device driver is disabled, retrying...");
+    if (nErr == 0x072) {
+      ALOGE("fastRPC device driver is disabled, retrying...");
     }
-    VERIFY_EPRINTF("audio adsp daemon will restart after 25ms...");
+    ALOGE("audio adsp daemon will restart after 25ms...");
     usleep(25000);
   }
-  VERIFY_EPRINTF("audio adsp daemon exiting %x", nErr);
-bail:
+  ALOGI("audio adsp daemon exiting %x", nErr);
+
   return nErr;
 }
