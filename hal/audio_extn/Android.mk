@@ -413,6 +413,10 @@ LOCAL_SRC_FILES:= \
         cirrus_playback.c
 endif
 
+ifeq ($(strip $(AUDIO_FEATURE_SONY_CIRRUS_CALIB_TA)),true)
+LOCAL_CFLAGS += -DGET_SPEAKER_CALIBRATIONS_FROM_TA
+endif
+
 LOCAL_CFLAGS += \
     -Wall \
     -Werror \
