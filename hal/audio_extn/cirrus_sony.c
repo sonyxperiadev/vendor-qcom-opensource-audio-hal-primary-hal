@@ -363,7 +363,16 @@ void spkr_prot_init(void *adev, spkr_prot_init_config_t spkr_prot_init_config_va
                        &handle.spkr.checksum, true);
     if (ret)
         return;
-#endif
+
+    handle.spkl.cal_ok = true;
+    handle.spkr.cal_ok = true;
+
+    int spkl_empty = 0;
+    for (i = 0; i < 4; i ++) {
+      spkl_empty |= handle.spkl.cal_r[i];
+    }
+    handle.is_stereo = spkl_empty != 0;
+#else
 
     /* Do we want to load or calibrate? */
     ret = cirrus_cal_from_file(&handle);
@@ -374,6 +383,7 @@ void spkr_prot_init(void *adev, spkr_prot_init_config_t spkr_prot_init_config_va
         handle.spkl.cal_ok = false;
         handle.spkr.cal_ok = false;
     }
+#endif
 
     // init function pointers
     fp_platform_get_snd_device_name = spkr_prot_init_config_val.fp_platform_get_snd_device_name;
