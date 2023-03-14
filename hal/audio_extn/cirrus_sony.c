@@ -196,7 +196,7 @@ static int get_ta_array(uint32_t unit, void *arr, bool reverse) {
         goto end;
 
     /* Invert the array, because TA has the values inverted... */
-    for (i = 0; i <= ta_sz / 2; i++) {
+    for (i = 0; i < ta_sz / 2; i++) {
         tmp = array[i];
         array[i] = array[ta_sz - i - 1];
         array[ta_sz - i - 1] = tmp;
