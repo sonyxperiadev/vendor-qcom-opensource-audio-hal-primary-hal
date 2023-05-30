@@ -64,7 +64,7 @@ LOCAL_CFLAGS += -Wno-tautological-compare
 LOCAL_CFLAGS += -Wno-unused-function
 LOCAL_CFLAGS += -Wno-unused-local-typedef
 
-ifneq ($(filter $(KONA) lahaina $(HOLI),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(KONA) $(LAHAINA) $(HOLI),$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
