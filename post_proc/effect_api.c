@@ -58,9 +58,15 @@
 #include <errno.h>
 #include <log/log.h>
 #include <tinyalsa/asoundlib.h>
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/sound/audio_effects.h>
+#include <legacy/sound/devdep_params.h>
+#include <legacy/linux/msm_audio.h>
+#else
 #include <sound/audio_effects.h>
 #include <sound/devdep_params.h>
 #include <linux/msm_audio.h>
+#endif
 #include <errno.h>
 #include <unistd.h>
 #include <stdio.h>

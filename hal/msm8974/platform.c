@@ -43,8 +43,13 @@
 #include "acdb.h"
 #include "voice_extn.h"
 #include "edid.h"
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include "legacy/sound/compress_params.h"
+#include "legacy/sound/msmcal-hwdep.h"
+#else
 #include "sound/compress_params.h"
 #include "sound/msmcal-hwdep.h"
+#endif
 #include <dirent.h>
 
 #ifdef DYNAMIC_LOG_ENABLED
@@ -80,7 +85,11 @@
 #define PLATFORM_INFO_XML_PATH_SCUBA_QRD "audio_platform_info_scubaqrd.xml"
 #define PLATFORM_INFO_XML_PATH_SA8295_ADP "audio_platform_info_sa8295.xml"
 
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/linux/msm_audio.h>
+#else
 #include <linux/msm_audio.h>
+#endif
 #if defined (PLATFORM_MSM8998) || (PLATFORM_SDM845) || (PLATFORM_SDM710) || \
     defined (PLATFORM_QCS605) || defined (PLATFORM_MSMNILE) || \
     defined (PLATFORM_KONA) || defined (PLATFORM_MSMSTEPPE) || \
@@ -89,7 +98,11 @@
     defined (PLATFORM_ATOLL) || defined (PLATFORM_BENGAL) || \
     defined (PLATFORM_HOLI) || defined (PLATFORM_LAHAINA)
 
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/sound/devdep_params.h>
+#else
 #include <sound/devdep_params.h>
+#endif
 #endif
 
 #include <resolv.h>

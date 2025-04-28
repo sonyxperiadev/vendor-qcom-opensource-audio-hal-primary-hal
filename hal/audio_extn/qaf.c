@@ -114,7 +114,11 @@
 #include <cutils/sched_policy.h>
 #include "audio_extn.h"
 #include <qti_audio.h>
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include "legacy/sound/compress_params.h"
+#else
 #include "sound/compress_params.h"
+#endif
 #include "ip_hdlr_intf.h"
 
 #ifdef DYNAMIC_LOG_ENABLED

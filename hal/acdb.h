@@ -21,7 +21,11 @@
 #define ACDB_H
 
 #include <stdbool.h>
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/linux/msm_audio_calibration.h>
+#else
 #include <linux/msm_audio_calibration.h>
+#endif
 
 #define MAX_CVD_VERSION_STRING_SIZE 100
 

@@ -27,8 +27,13 @@
 #include <sys/ioctl.h>
 #include <sys/stat.h>
 #include <sound/asound.h>
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/sound/audio_effects.h>
+#include <legacy/sound/devdep_params.h>
+#else
 #include <sound/audio_effects.h>
 #include <sound/devdep_params.h>
+#endif
 #include "audio_hw.h"
 #include "platform.h"
 #include "platform_api.h"

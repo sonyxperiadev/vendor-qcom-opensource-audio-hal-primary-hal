@@ -46,7 +46,11 @@
 #include <cutils/sched_policy.h>
 #include <system/thread_defs.h>
 #include <sound/asound.h>
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/linux/msm_audio.h>
+#else
 #include <linux/msm_audio.h>
+#endif
 
 #include "audio_hw.h"
 #include "audio_defs.h"

@@ -116,7 +116,11 @@
 #include "audio_extn.h"
 #include <qti_audio.h>
 #include <qap_api.h>
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include "legacy/sound/compress_params.h"
+#else
 #include "sound/compress_params.h"
+#endif
 #include "ip_hdlr_intf.h"
 #include "dolby_ms12.h"
 

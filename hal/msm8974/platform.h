@@ -19,7 +19,11 @@
 
 #ifndef QCOM_AUDIO_PLATFORM_H
 #define QCOM_AUDIO_PLATFORM_H
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/sound/voice_params.h>
+#else
 #include <sound/voice_params.h>
+#endif
 
 #define TRUMPET_TOPOLOGY 0x11000099
 #define ACDB_ID_STEREO_SPEAKER_DEVICE 15

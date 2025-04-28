@@ -156,6 +156,10 @@ ifeq ($(ENABLE_AUDIO_LEGACY_TECHPACK),true)
   LOCAL_HEADER_LIBRARIES += qti_legacy_audio_kernel_uapi
 endif
 
+ifeq ($(TARGET_KERNEL_VERSION), 5.10)
+  LOCAL_CFLAGS += -D_TARGET_KERNEL_VERSION_510_
+endif
+
 LOCAL_SRC_FILES := \
     audio_hw.c \
     acdb.c \

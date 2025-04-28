@@ -91,10 +91,18 @@
 #include "platform.h"
 #include "platform_api.h"
 #include "edid.h"
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include "legacy/sound/compress_params.h"
+#else
 #include "sound/compress_params.h"
+#endif
 
 #ifdef AUDIO_GKI_ENABLED
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include "legacy/sound/audio_compressed_formats.h"
+#else
 #include "sound/audio_compressed_formats.h"
+#endif
 #endif
 
 #ifdef DYNAMIC_LOG_ENABLED

@@ -39,9 +39,15 @@
 #include "audio_extn.h"
 #include "voice_extn.h"
 #include "voice.h"
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/sound/compress_params.h>
+#include <legacy/sound/compress_offload.h>
+#include <legacy/sound/devdep_params.h>
+#else
 #include <sound/compress_params.h>
 #include <sound/compress_offload.h>
 #include <sound/devdep_params.h>
+#endif
 #include <tinycompress/tinycompress.h>
 
 #ifdef DYNAMIC_LOG_ENABLED

@@ -35,7 +35,11 @@
 #include <log/log.h>
 #include <fcntl.h>
 #include <tinyalsa/asoundlib.h>
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/sound/audio_effects.h>
+#else
 #include <sound/audio_effects.h>
+#endif
 #include <audio_effects/effect_hwaccelerator.h>
 
 #include "effect_api.h"

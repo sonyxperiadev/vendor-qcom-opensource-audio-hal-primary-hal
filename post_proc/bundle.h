@@ -21,7 +21,11 @@
 #define OFFLOAD_EFFECT_BUNDLE_H
 
 #include <tinyalsa/asoundlib.h>
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/sound/audio_effects.h>
+#else
 #include <sound/audio_effects.h>
+#endif
 #include "effect_api.h"
 
 /* Retry for delay for mixer open */

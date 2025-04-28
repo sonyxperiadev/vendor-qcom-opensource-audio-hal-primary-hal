@@ -37,7 +37,11 @@
 #include <cutils/atomic.h>
 
 #include <hardware/audio.h>
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include "legacy/sound/compress_params.h"
+#else
 #include "sound/compress_params.h"
+#endif
 #include "audio_hw.h"
 #include "audio_extn.h"
 #include "audio_hw_extn_api.h"

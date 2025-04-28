@@ -36,13 +36,23 @@
 #include "acdb.h"
 #include "voice_extn.h"
 #include "edid.h"
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include "legacy/sound/compress_params.h"
+#include "legacy/sound/msmcal-hwdep.h"
+#include <legacy/linux/msm_audio.h>
+#else
 #include "sound/compress_params.h"
 #include "sound/msmcal-hwdep.h"
-#include <dirent.h>
 #include <linux/msm_audio.h>
+#endif
+#include <dirent.h>
 
 #if defined(PLATFORM_MSMFALCON)
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/sound/devdep_params.h>
+#else
 #include <sound/devdep_params.h>
+#endif
 #endif
 
 #ifdef DYNAMIC_LOG_ENABLED

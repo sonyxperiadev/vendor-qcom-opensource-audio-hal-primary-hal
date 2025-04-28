@@ -29,7 +29,11 @@
 #include <cutils/properties.h>
 #include <sys/ioctl.h>
 #include <time.h>
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/sound/voice_params.h>
+#else
 #include <sound/voice_params.h>
+#endif
 
 #include "audio_hw.h"
 #include "voice.h"

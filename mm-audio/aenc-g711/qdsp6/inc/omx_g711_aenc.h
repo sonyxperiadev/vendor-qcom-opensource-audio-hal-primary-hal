@@ -58,8 +58,13 @@ This module contains the class definition for openMAX encoder component.
 #include "qc_omx_component.h"
 #include "Map.h"
 #include <semaphore.h>
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/linux/msm_audio.h>
+#include <legacy/linux/msm_audio_g711.h>
+#else
 #include <linux/msm_audio.h>
 #include <linux/msm_audio_g711.h>
+#endif
 extern "C" {
     void * get_omx_component_factory_fn(void);
 }

@@ -48,7 +48,11 @@
 
 #include "audio_extn.h"
 #include "audio_defs.h"
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include "legacy/sound/compress_params.h"
+#else
 #include "sound/compress_params.h"
+#endif
 
 #ifdef DYNAMIC_LOG_ENABLED
 #include <log_xml_parser.h>

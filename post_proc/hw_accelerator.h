@@ -33,7 +33,11 @@
 
 #include "bundle.h"
 
+#ifdef _TARGET_KERNEL_VERSION_510_
+#include <legacy/linux/msm_audio.h>
+#else
 #include <linux/msm_audio.h>
+#endif
 
 #define HWACCELERATOR_OUTPUT_CHANNELS AUDIO_CHANNEL_OUT_STEREO
 

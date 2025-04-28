@@ -60,6 +60,9 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_DLKM)),true)
   endif # BOARD_OPENSOURCE_DIR
 endif
 
+ifeq ($(TARGET_KERNEL_VERSION), 5.10)
+  LOCAL_CFLAGS += -D_TARGET_KERNEL_VERSION_510_
+endif
 
 ifneq ($(filter $(KONA) $(LAHAINA) $(HOLI),$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
